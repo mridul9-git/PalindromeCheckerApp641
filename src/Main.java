@@ -51,4 +51,16 @@ public class PalindromeApp{
         boolean p6=true;
         while(!q.isEmpty()){if(q.remove()!=st2.pop()){p6=false;break;}}
         System.out.println(input6+" -> "+(p6?"Palindrome":"Not Palindrome"));
-    }}
+
+//UC7
+        System.out.println("\nUC7 - Deque");
+        String input7="refer".toLowerCase();
+        Deque<Character> dq=new ArrayDeque<>();
+        for(char c:input7.toCharArray()){dq.addLast(c);}
+        boolean p7=true;
+        while(dq.size()>1){if(dq.removeFirst()!=dq.removeLast()){p7=false;break;}}
+        System.out.println(input7+" -> "+(p7?"Palindrome":"Not Palindrome"));
+
+        System.out.println("\nProgram executed successfully.");
+    }
+}
