@@ -139,5 +139,15 @@ public class PalindromeApp{
         String rev10 = new StringBuilder(norm).reverse().toString();
         System.out.println(input10 + " -> " + (norm.equals(rev10) ? "Palindrome":"Not Palindrome"));
 
+        //UC11
+        System.out.println("\nUC11 - OOP Palindrome Service");
+
+        class PalindromeChecker {
+            boolean checkPalindrome(String s){
+                String rev = new StringBuilder(s).reverse().toString();
+                return s.equals(rev);
+            }
+        }
+
     }
 }
