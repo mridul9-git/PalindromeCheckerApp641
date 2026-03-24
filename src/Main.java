@@ -149,5 +149,48 @@ public class PalindromeApp{
             }
         }
 
+
+//UC12
+        System.out.println("\nUC12 - Strategy Pattern");
+
+//Interface
+        interface PalindromeStrategy {
+            boolean check(String s);
+        }
+
+//Stack Strategy
+        class StackStrategy implements PalindromeStrategy {
+            public boolean check(String s){
+                Stack<Character> st = new Stack<>();
+                for(char c : s.toCharArray()) st.push(c);
+                for(char c : s.toCharArray()) if(c != st.pop()) return false;
+                return true;
+            }
+        }
+
+//Deque Strategy
+        class DequeStrategy implements PalindromeStrategy {
+            public boolean check(String s){
+                Deque<Character> dq = new ArrayDeque<>();
+                for(char c : s.toCharArray()) dq.add(c);
+                while(dq.size() > 1){
+                    if(dq.removeFirst() != dq.removeLast()) return false;
+                }
+                return true;
+            }
+        }
+
+//Use strategy
+        String input12 = "level";
+        PalindromeStrategy strategy;
+
+        strategy = new StackStrategy();
+        System.out.println("Stack Strategy: " + (strategy.check(input12) ? "Palindrome":"Not Palindrome"));
+
+        strategy = new DequeStrategy();
+        System.out.println("Deque Strategy: " + (strategy.check(input12) ? "Palindrome":"Not Palindrome"));
+
+
+
     }
 }
