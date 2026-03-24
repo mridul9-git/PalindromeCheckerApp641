@@ -62,5 +62,58 @@ public class PalindromeApp{
         System.out.println(input7+" -> "+(p7?"Palindrome":"Not Palindrome"));
 
         System.out.println("\nProgram executed successfully.");
+
+        //UC8
+        System.out.println("\nUC8 - Linked List Palindrome");
+
+//Node class
+        class Node {
+            char data;
+            Node next;
+            Node(char d){ data=d; next=null; }
+        }
+
+//Create Linked List
+        String input8 = "racecar";
+        Node head = null, temp = null;
+        for(char c : input8.toCharArray()){
+            if(head == null){
+                head = new Node(c);
+                temp = head;
+            } else {
+                temp.next = new Node(c);
+                temp = temp.next;
+            }
+        }
+
+//Find middle
+        Node slow = head, fast = head;
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+//Reverse second half
+        Node prev = null, curr = slow;
+        while(curr != null){
+            Node next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+
+//Compare
+        Node first = head, second = prev;
+        boolean p8 = true;
+        while(second != null){
+            if(first.data != second.data){
+                p8 = false;
+                break;
+            }
+            first = first.next;
+            second = second.next;
+        }
+        System.out.println(input8 + " -> " + (p8 ? "Palindrome" : "Not Palindrome"));
+
     }
 }
