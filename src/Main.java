@@ -190,7 +190,27 @@ public class PalindromeApp{
         strategy = new DequeStrategy();
         System.out.println("Deque Strategy: " + (strategy.check(input12) ? "Palindrome":"Not Palindrome"));
 
+//UC13
+        System.out.println("\nUC13 - Performance Comparison");
 
+        String test = "malayalam";
+
+//Method 1 - StringBuilder
+        long start1 = System.nanoTime();
+        new StringBuilder(test).reverse().toString().equals(test);
+        long end1 = System.nanoTime();
+
+//Method 2 - Two Pointer
+        long start2 = System.nanoTime();
+        int l=0, r=test.length()-1; boolean res=true;
+        while(l<r){
+            if(test.charAt(l)!=test.charAt(r)){res=false;break;}
+            l++; r--;
+        }
+        long end2 = System.nanoTime();
+
+        System.out.println("StringBuilder Time: " + (end1-start1) + " ns");
+        System.out.println("Two Pointer Time: " + (end2-start2) + " ns");
 
     }
 }
