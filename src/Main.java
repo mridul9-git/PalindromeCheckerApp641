@@ -32,4 +32,14 @@ public class PalindromeApp{
         int s=0,e=arr.length-1;boolean p4=true;
         while(s<e){if(arr[s]!=arr[e]){p4=false;break;}s++;e--;}
         System.out.println(input4+" -> "+(p4?"Palindrome":"Not Palindrome"));
+
+//UC5
+        System.out.println("\nUC5 - Stack");
+        String input5="madam".toLowerCase();
+        Stack<Character> st=new Stack<>();
+        for(char c:input5.toCharArray()){st.push(c);}
+        boolean p5=true;
+        for(char c:input5.toCharArray()){if(c!=st.pop()){p5=false;break;}}
+        System.out.println(input5+" -> "+(p5?"Palindrome":"Not Palindrome"));
+
     }}
