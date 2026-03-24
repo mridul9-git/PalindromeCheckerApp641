@@ -42,4 +42,13 @@ public class PalindromeApp{
         for(char c:input5.toCharArray()){if(c!=st.pop()){p5=false;break;}}
         System.out.println(input5+" -> "+(p5?"Palindrome":"Not Palindrome"));
 
+//UC6
+        System.out.println("\nUC6 - Queue + Stack");
+        String input6="radar".toLowerCase();
+        Queue<Character> q=new LinkedList<>();
+        Stack<Character> st2=new Stack<>();
+        for(char c:input6.toCharArray()){q.add(c);st2.push(c);}
+        boolean p6=true;
+        while(!q.isEmpty()){if(q.remove()!=st2.pop()){p6=false;break;}}
+        System.out.println(input6+" -> "+(p6?"Palindrome":"Not Palindrome"));
     }}
