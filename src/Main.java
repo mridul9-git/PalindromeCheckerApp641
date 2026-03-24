@@ -24,4 +24,12 @@ public class PalindromeApp{
         String rev3="";
         for(int i=word3.length()-1;i>=0;i--){rev3+=word3.charAt(i);}
         System.out.println(word3+" -> "+(word3.equals(rev3)?"Palindrome":"Not Palindrome"));
+
+//UC4
+        System.out.println("\nUC4 - Two Pointer");
+        String input4="level";
+        char[] arr=input4.toCharArray();
+        int s=0,e=arr.length-1;boolean p4=true;
+        while(s<e){if(arr[s]!=arr[e]){p4=false;break;}s++;e--;}
+        System.out.println(input4+" -> "+(p4?"Palindrome":"Not Palindrome"));
     }}
