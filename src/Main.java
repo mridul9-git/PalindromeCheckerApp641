@@ -130,7 +130,14 @@ public class PalindromeApp{
 
         RecursionCheck rc = new RecursionCheck();
         System.out.println(input9 + " -> " + (rc.check(input9,0,input9.length()-1) ? "Palindrome":"Not Palindrome"));
+//UC10
+        System.out.println("\nUC10 - Ignore Case & Spaces");
 
+        String input10 = "A man a plan a canal Panama";
+        String norm = input10.replaceAll("\\s+","").toLowerCase();
+
+        String rev10 = new StringBuilder(norm).reverse().toString();
+        System.out.println(input10 + " -> " + (norm.equals(rev10) ? "Palindrome":"Not Palindrome"));
 
     }
 }
