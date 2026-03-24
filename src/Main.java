@@ -115,5 +115,22 @@ public class PalindromeApp{
         }
         System.out.println(input8 + " -> " + (p8 ? "Palindrome" : "Not Palindrome"));
 
+        //UC9
+        System.out.println("\nUC9 - Recursion");
+
+        String input9 = "madam";
+
+        class RecursionCheck {
+            boolean check(String s, int l, int r){
+                if(l >= r) return true;
+                if(s.charAt(l) != s.charAt(r)) return false;
+                return check(s, l+1, r-1);
+            }
+        }
+
+        RecursionCheck rc = new RecursionCheck();
+        System.out.println(input9 + " -> " + (rc.check(input9,0,input9.length()-1) ? "Palindrome":"Not Palindrome"));
+
+
     }
 }
