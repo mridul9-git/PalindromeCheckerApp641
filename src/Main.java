@@ -18,4 +18,10 @@ public class PalindromeApp{
         String word2="maLAYALam";
         System.out.println(word2+" -> "+(word2.equals(new StringBuilder(word2).reverse().toString())?"Palindrome":"Not Palindrome"));
 
+//UC3
+        System.out.println("\nUC3 - Loop Reverse");
+        String word3="malayalam";
+        String rev3="";
+        for(int i=word3.length()-1;i>=0;i--){rev3+=word3.charAt(i);}
+        System.out.println(word3+" -> "+(word3.equals(rev3)?"Palindrome":"Not Palindrome"));
     }}
